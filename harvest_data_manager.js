@@ -2,6 +2,8 @@
 
 function resetCookieData(){
     let empty_data = `h_data={"circle": ["", {}], "triangle": ["", {}], "square": ["", {}], "pentagon": ["", {}]}`;
+    dt.setDate(dt.getDate()+1000);
+    empty_data += " expires=" + dt + "; path=/;";
     document.cookie=empty_data;
 }
 
