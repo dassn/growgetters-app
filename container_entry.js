@@ -14,5 +14,5 @@ function makeEntry(form){
     harvests[container][1] = expiration;
     document.cookie = 'h_data=' + JSON.stringify(harvests);
 
-    document.location.href="/index.html";
+    document.location.href="/growgetters-app";
 }
