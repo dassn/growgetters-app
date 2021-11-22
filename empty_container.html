@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Container</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <script src="empty_container.js"></script>
+    <style>
+        body{
+			background-color: #edffd9;
+			font-family: "Varela Round";
+        }
+        .box{
+			width: 400px;
+			padding: 40px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border: 1px solid black;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+        h4{
+            margin-bottom: 50px;
+        }
+        a{
+            margin: 16px;
+            padding: 10px 30px;
+            border-radius: 999px;
+            color: white;
+        }
+        #ok-btn{
+            background-color: darkgreen;
+        }
+        #cancel-btn{
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Empty Container?</h1>
+        <h4 id="container-info">Contains food</h4>
+        <a id="ok-btn" onclick="emptyContainer()">OK</a> <a id="cancel-btn" onclick="goToHome()">CANCEL</a>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        let container = urlParams.get('shape');
+        let info_string = "The " + container + " container has " + harvests[container][0] + "."
+        document.getElementById("container-info").innerText = info_string;
+    </script>
+</body>
+</html>

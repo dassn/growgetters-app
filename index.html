@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowGetters Tracker App</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+
+    <style>
+        body{
+            margin:100px;
+			margin-top: 50px;
+			background-color: #edffd9;
+			font-family: "Varela Round";
+        }
+		#title{
+			font-size: 4rem;
+			color: black;
+			text-align: center;
+		}
+        .flex-cont{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .harvest-container-link{
+            background-color: #c8d6af;
+            text-align: center;
+            font-size: 4rem;
+            padding: 0.8em;
+            border-radius: 0.25em;
+			border: 4px solid black;
+            color: black;
+            text-decoration: none;
+        }
+        .harvest-container-link:hover{
+            background-color: #566e3d;
+        }
+        .harvest-container-link:active{
+            background-color: 566e3d;
+        }
+
+        .shape-icon{
+            vertical-align: middle;
+            padding: 0 10px;
+            font-size: 1.5em; 
+        }
+        .label-text{
+            vertical-align: middle;
+            font-size: 1em;
+        }
+        .description{
+            font-size: 0.5em;
+        }
+
+        @media (max-width: 700px){
+			.harvest-container-link{
+                font-size:3rem;
+            }
+		}
+
+        @media (max-width: 600px){
+            body{
+                margin: 40px 50px;
+            }
+			.label-text{
+                display: none;
+            }
+            .description{
+                line-height: 0.1;
+            }
+            #title{
+                font-size: 2rem;
+            }
+		}
+    </style>
+</head>
+<body>
+	<h1 id="title">Harvest Tracking App</h1>
+    <div class="flex-cont">
+        <a class="harvest-container-link" href="/container_entry.html?shape=circle">
+            <span class="material-icons-outlined shape-icon">circle</span>
+            <span class="label-text">CONTAINER</span> <br>
+            <span class="description" id="circle-info"></span> <br>
+        </a>
+
+        <a class="harvest-container-link" href="container_entry.html?shape=triangle">
+            <span class="material-icons-outlined shape-icon">change_history</span>
+            <span class="label-text">CONTAINER</span> <br>
+            <span class="description" id="triangle-info"></span>
+        </a>
+
+        <a class="harvest-container-link" href="container_entry.html?shape=square">
+            <span class="material-icons-outlined shape-icon">square</span>
+            <span class="label-text">CONTAINER</span> <br>
+            <span class="description" id="square-info"></span>
+        </a>
+
+        <a class="harvest-container-link" href="container_entry.html?shape=pentagon">
+            <span class="material-icons-outlined shape-icon">pentagon</span>
+            <span class="label-text">CONTAINER</span> <br>
+            <span class="description" id="pentagon-info"></span>
+        </a>
+
+        <script src="harvest_data_manager.js"></script>
+
+        <!--
+        //old code
+        <div class="harvest-container" href="container_entry.html">	
+            <div class="center">
+                <span class="material-icons-outlined shape-icon">circle</span>
+            </div>
+			<p class="label-text">CONTAINER</p>
+		</div>
+        <a class="harvest-container" href="container_entry.html">
+            <div class="center">
+                <span class="material-icons-outlined shape-icon">square</span>
+            </div>
+		    <span class="label-text">CONTAINER</span>
+		</a>
+        <a class="harvest-container" href="container_entry.html">Container 3</a>
+        <a class="harvest-container" href="container_entry.html">Container 4</a>
+        -->
+        
+    </div>
+</body>
+</html>
