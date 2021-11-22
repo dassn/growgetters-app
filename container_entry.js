@@ -12,7 +12,9 @@ function makeEntry(form){
     if(food!="greenx") expiration.setDate(expiration.getDate()+7);
     else expiration = new Date(Date.now()+20*1000);
     harvests[container][1] = expiration;
-    document.cookie = 'h_data=' + JSON.stringify(harvests);
-
+    let cookie_end = new Date();
+    cookie_end.setDate(expiration.getDate()+993);
+    document.cookie = 'h_data=' + JSON.stringify(harvests) + "; expires=" + cookie_end + "; path=/;";
+    
     document.location.href="/growgetters-app";
 }
