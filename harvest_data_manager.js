@@ -32,7 +32,7 @@ for(let shp of shapes){
         else info_string = "Your " + harvests[shp][0] + " has expired!";
         let elem = document.getElementById(shp+"-info")
         elem.innerText = info_string;
-        elem.parentElement.setAttribute("href", "/empty_container.html?shape="+shp);
+        elem.parentElement.setAttribute("href", "/growgetters-app/empty_container.html?shape="+shp);
         if(days_left<=0){
             elem.parentElement.style.backgroundColor = "#dcafc8";
         }
