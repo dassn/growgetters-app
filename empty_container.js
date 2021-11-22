@@ -11,7 +11,9 @@ function emptyContainer(){
 
     harvests[container][0]="";
     harvests[container][1]={};
-    document.cookie = 'h_data=' + JSON.stringify(harvests);
+    let dt = new Date();
+    dt.setDate(dt.getDate()+1000);
+    document.cookie = 'h_data=' + JSON.stringify(harvests) + ";expires=" + dt + "; path=/;";
 
     goToHome();
 }
