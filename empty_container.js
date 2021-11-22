@@ -1,7 +1,7 @@
 let harvests = JSON.parse(document.cookie.split('; ').find(row => row.startsWith('h_data=')).split('=')[1]);
 
 function goToHome(){
-    window.location.href = "/index.html";
+    window.location.href = "/growgetters-app";
 }
 
 function emptyContainer(){
