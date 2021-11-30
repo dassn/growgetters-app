@@ -9,8 +9,10 @@ function makeEntry(form){
     let harvests = JSON.parse(document.cookie.split('; ').find(row => row.startsWith('h_data=')).split('=')[1]);
     harvests[container][0]=food;
     let expiration = new Date();
-    if(food!="greenx") expiration.setDate(expiration.getDate()+7);
-    else expiration = new Date(Date.now()+20*1000);
+    if(food=="greenx") expiration = new Date(Date.now()+7*1000);
+    else if(food=="greenxx") expiration = new Date(Date.now()+129607*1000);
+    else expiration.setDate(expiration.getDate()+7);
+    
     harvests[container][1] = expiration;
     let cookie_end = new Date();
     cookie_end.setDate(expiration.getDate()+993);
