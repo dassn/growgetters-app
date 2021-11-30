@@ -11,15 +11,25 @@
     <style>
         body{
             margin:100px;
-			margin-top: 50px;
-			background-color: #edffd9;
-			font-family: "Varela Round";
+	    margin-top: 50px;
+	    background-color: #edffd9;
+	    font-family: "Varela Round";
         }
-		#title{
-			font-size: 4rem;
-			color: black;
-			text-align: center;
-		}
+	#title{
+	    font-size: 4rem;
+	    color: black;
+	    text-align: center;
+	}
+	#alert-banner{
+            display: none;
+            background-color: crimson;
+            color: white;
+            font-size: 1.5rem;
+            padding: 20px 20px;
+        }
+	#alert-banner>p{
+            margin: 5px;
+        }
         .flex-cont{
             display: flex;
             flex-direction: column;
@@ -59,7 +69,7 @@
 			.harvest-container-link{
                 font-size:3rem;
             }
-		}
+	}
 
         @media (max-width: 600px){
             body{
@@ -74,11 +84,18 @@
             #title{
                 font-size: 2rem;
             }
-		}
+	    #alert-banner{
+                font-size: 1.4rem;
+            }
+	}
     </style>
 </head>
 <body>
-	<h1 id="title">Harvest Tracking App</h1>
+    <div id="alert-banner">
+        <p>Uh-oh! The following containers are about to expire: </p>
+        <span class="material-icons-outlined shape-icon"></span>
+    </div>
+    <h1 id="title">Harvest Tracking App</h1>
     <div class="flex-cont">
         <a class="harvest-container-link" href="/growgetters-app/container_entry.html?shape=circle">
             <span class="material-icons-outlined shape-icon">circle</span>
