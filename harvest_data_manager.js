@@ -26,6 +26,7 @@ catch(error){
 }
 
 let shapes = ['circle', 'triangle', 'square', 'pentagon'];
+let critical = "";
 for(let shp of shapes){
     if(harvests[shp][0]!=""){
         let exp_date = new Date(Date.parse(harvests[shp][1]));
@@ -39,8 +40,16 @@ for(let shp of shapes){
         if(days_left<=0){
             elem.parentElement.style.backgroundColor = "#dcafc8";
         }
+        if(days_left<=1.5){
+            if(shp=='triangle') critical+="change_history";
+            else critical+=shp;
+        }
     }
     else{
         document.getElementById(shp+"-info").innerText = "This container is empty";
+    }
+    if(critical.length>0){
+        document.getElementById("alert-banner").style.display = "block";
+        document.getElementById("alert-banner").children[1].innerText = critical;
     }
 }
